@@ -1,0 +1,26 @@
+{
+    "name": "rd-training",
+    "description": "https://jira.simpleviewtools.com/browse/GROK-246",
+    "author": "Mark Brettin <mark@simpleviewinc.com>",
+    "repository": "Woo",
+    "license": "UNLICENSED",
+    "main": "server.js",
+    "scripts": {
+        "start": "node lib/server.js",
+        "test": "mocha lib/test/*test.js",
+        "lint": "eslint lib/",
+        "style": "eslint -f table lib/"
+    },
+    "dependencies": {
+        "axios": "^0.19.0",
+        "express": "4.17.1",
+        "mongodb": "^3.4.0"
+    },
+    "devDependencies": {
+        "@simpleview/assertlib": "^1.1.1",
+        "@simpleview/mochalib": "^1.0.2",
+        "babel-eslint": "^10.0.3",
+        "eslint": "^6.8.0",
+        "mocha": "^6.2.2"
+    }
+}

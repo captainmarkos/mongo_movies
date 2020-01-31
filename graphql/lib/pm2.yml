@@ -1,0 +1,6 @@
+apps:
+  - script: 'server.js'
+    name: 'apollo-express'
+    watch: true
+    watch_options:
+        usePolling: true
