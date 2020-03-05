@@ -61,6 +61,9 @@ sudo helm status rd-kubernetes-training
 sudo sv enterPod rd-kubernetes-training-mongo
 
 sudo sv start rd-kubernetes-training local --build --dry-run --debug
+
+sudo bash /sv/scripts/stop_minikube.sh
+sudo bash /sv/scripts/start_minikube.sh
 ```
 When entering the `rd-kubernetes-training-mongo` pod you should be able to enter the mongo shell.
 Additionally hitting http://192.168.50.100:22000/ should display a message.
@@ -145,3 +148,66 @@ https://rd-kubernetes-training.kube.simpleview.io/find?title=Thor
 https://rd-kubernetes-training.kube.simpleview.io/remove?id=5e3069f8d9c5df002158c31a
 
 
+### [GROK-270](https://jira.simpleviewtools.com/browse/GROK-270) Add V2 of graphQL and implement
+
+This ticket introduces a new version `rd-kubernetes-training-graphql-v2` which
+makes changes to the graphql end-points for `insert` and `find` where a "director"
+field has been added to a movie.
+
+Graphql url for this new version:
+https://graphql.kube.simpleview.io/link/training-v2/
+
+New query and mutation:
+```
+# insert requires title, director and date
+mutation {
+  training {
+    insert(input: {title: "Star Wars", director: "George Lucas", date: "2020-01-20"}) {
+      success
+      message
+    }
+  }
+}
+
+# find all
+query {
+  training {
+    find {
+      success
+      message
+      docs {
+        id
+        title
+        director
+        date
+      }
+    }
+  }
+}
+
+# find by director
+query($director: String="George Lucas") {
+  training {
+    find(filter: {director: $director}) {
+      success
+      message
+      docs {
+        id
+        title
+        director
+        date
+      }
+    }
+  }
+}
+```
+
+
+### [GROK-271](https://jira.simpleviewtools.com/browse/GROK-271) Unit tests
+
+To run the tests in the VM:
+```
+sudo sv test rd-kubernetes-training-graphql-v1
+
+sudo sv test rd-kubernetes-training-graphql-v2
+```
