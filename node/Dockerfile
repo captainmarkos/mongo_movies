@@ -1,5 +1,5 @@
 # Active LTS:  https://nodejs.org/en/about/releases/
-FROM node:12.13.1
+FROM node:16.15.0
 
 COPY package.json /app/package.json
 COPY package-lock.json /app/package-lock.json
