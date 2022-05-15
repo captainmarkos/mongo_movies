@@ -14,15 +14,15 @@ I've been working with REST API's for many years and so wanted to see what all f
 - [GraphQL](https://graphql.org/graphql-js/)
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
 - [Notes on Node Module Versions](#notes-on-node-module-versions)
-- [View Docker Logs](#viewing-docker-logs)
+- [View Docker Logs](#view-docker-logs)
 - [How To Communicate Between Docker Containers](#how-to-communicate-between-docker-containers)
 
 
 The Mongo Movies application consists of three docker images.  See the individual `Dockerfile` in each of the subdirectories.
 
-- [Build & Run Express Server](#build-\&-run-express-server)
-- [Build & Run MongoDB](#build-\&-run-mongodb)
-- [Build & Run GraphQL](#build-/&-run-graphql)
+- [Build & Run Express Server](#build-run-express-server)
+- [Build & Run MongoDB](#build-run-mongodb)
+- [Build & Run GraphQL](#build-run-graphql)
 - [Running Tests](#running-tests)
 
 
@@ -55,7 +55,7 @@ Date: Sat, 14 May 2022 17:20:31 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 
-Welcome to Mongo Movies! 🚀 
+Welcome to Mongo Movies! 🚀
 ```
 
 This root route just returns the welcome message.  Other routes will make requests to the graphql server but won't work until that container is up and running.
@@ -264,7 +264,7 @@ root@3d4e6b81c3b3:/app# npm run test
 ```
 
 
-### Notes on npm versions
+### Notes on Node Module Versions
 
 Caret Ranges ^1.2.3 ^0.2.5 ^0.0.4
 [https://github.com/npm/node-semver#caret-ranges-123-025-004](https://github.com/npm/node-semver#caret-ranges-123-025-004)
