@@ -4,9 +4,10 @@ const { MongoClient, ObjectID } = require('mongodb');
 const { isValidMongoID, isValidDate} = require('./utils');
 const { defaultFieldResolver } = require('graphql');
 const moment = require('moment');
-
 const start_date = Date.now();
-const mongo_url = 'mongodb://192.168.50.101:27017';
+
+// docker inspect <container id> | grep IPAddress
+const mongo_url = 'mongodb://172.17.0.2:27017';
 const mongo_options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 // Construct a schema, using GraphQL schema definition language (SDL).
@@ -169,7 +170,7 @@ const resolvers = {
 };
 
 const boot = async () => {
-    // Wrapping this code in an async function helps prevent race condtions.
+    // Wrapping this code in an async function helps prevent race condtions?
 
     const app = express();
     app.get('/status/', (req, res) => {
@@ -184,6 +185,7 @@ const boot = async () => {
     const server = new ApolloServer({
         typeDefs,
         resolvers,
+        /* eslint-disable-next-line no-unused-vars */
         context: ({req}) => {
             return { db: db.collection('movies') };
         },
@@ -193,7 +195,7 @@ const boot = async () => {
     server.applyMiddleware({ app, path: '/' });
 
     app.listen(4000, () => {
-        console.log(`🚀 Server is ready`)
+        console.log(`🚀 Server is ready`);
     });
 };
 

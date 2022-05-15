@@ -70,8 +70,8 @@ const movieInsert = function(args) {
 };
 
 const gql_request = async function(query) {
-    //const API_URL = 'http://192.168.50.101:4000';
-    const API_URL = 'http://0.0.0.0:4000';
+    // docker inspect <container id> | grep IPAddress
+    const API_URL = 'http://172.17.0.4:4000';
     const response = await axios.post(API_URL, query);
     return (response);
 };
@@ -80,7 +80,7 @@ app.get('/', async (req, res) => {
     //const query = movieQuery({});
     //const result = await gql_request(query);
     //res.send(result.data.data.training.find);
-    console.log(`Server is ready 🚀 `)
+    console.log(`Server is ready 🚀 `);
     res.send('Welcome to Mongo Movies! 🚀 \n');
 });
 

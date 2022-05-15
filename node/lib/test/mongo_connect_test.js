@@ -2,16 +2,15 @@ const assert = require('assert');
 
 const { MongoClient } = require('mongodb');
 
-const url = 'mongodb://192.168.50.101:27017';
+const mongo_url = 'mongodb://172.17.0.2:27017';
 const options = { useUnifiedTopology: true };
 
 describe(__filename, function() {
     describe('Mongo client connection', function() {
         it('should connect to databasae', async function() {
-            const client = await MongoClient.connect(url, options);
+            const client = await MongoClient.connect(mongo_url, options);
             assert.notStrictEqual(client, null);
             assert.notStrictEqual(client, undefined);
-            assert.strictEqual(client._eventsCount, 1);
 
             const db = client.db('entertainment');
             assert.notStrictEqual(db, null);

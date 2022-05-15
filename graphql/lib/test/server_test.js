@@ -1,10 +1,11 @@
+/* eslint-disable quotes */
 const { create_mock_movie, remove_mock_movies } = require('./mock_gen');
 
 const mochaLib = require('@simpleview/mochalib');
-const { deepCheck } = require("@simpleview/assertlib");
-const axios = require("axios");
+const { deepCheck } = require('@simpleview/assertlib');
+const axios = require('axios');
 
-const GRAPH_URL = 'http://192.168.50.101:4000' // /status'
+const GRAPH_URL = 'http://172.17.0.4:4000';
 
 const mock_movies_generate = async () => {
     let options;
@@ -187,14 +188,13 @@ describe(__filename, function() {
                             }
                         });
                     }
-                },
-
+                }
             },
 
             {
                 name: 'query for movies by date',
                 args: {
-                    query: (mock_movies) => {
+                    query: () => {
                         return ({
                             query: `
                               query($date: String) {

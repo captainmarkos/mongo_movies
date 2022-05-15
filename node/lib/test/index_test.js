@@ -182,7 +182,7 @@ describe(__filename, function() {
 
         mochaLib.testArray(tests, function(test) {
             let fn = () => {
-                emailValidation(test.message)
+                emailValidation(test.message);
             };
             assert.throws(fn, test.result);
         });

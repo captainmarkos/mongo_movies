@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 
 const create_mock_movie = async (GRAPH_URL, opts) => {
     let insert_query = {
@@ -34,7 +34,7 @@ const create_mock_movie = async (GRAPH_URL, opts) => {
                 }
             }`,
         variables: { title: opts.title ? opts.title : '' }
-    }
+    };
 
     let result = false;
 
