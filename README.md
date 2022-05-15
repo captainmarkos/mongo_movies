@@ -7,22 +7,22 @@ I've been working with REST API's for many years and so wanted to see what all f
 
 ### The Stack, Tools & Notes
 
-[NodeJS](https://nodejs.org/en/)
-[MongoDB](https://www.mongodb.com/)
-[Express](https://expressjs.com/)
-[Apollo Server Express](https://www.apollographql.com/blog/backend/using-express-with-graphql-server-node-js/)
-[GraphQL](https://graphql.org/graphql-js/)
-[Node Version Manager](https://github.com/nvm-sh/nvm)
-[Notes on Node Module Versions](#notes-on-node-module-versions)
-[View Docker Logs](#viewing-docker-logs)
-[How To Communicate Between Docker Containers](#how-to-communicate-between-docker-containers)
+- [NodeJS](https://nodejs.org/en/)
+- [MongoDB](https://www.mongodb.com/)
+- [Express](https://expressjs.com/)
+- [Apollo Server Express](https://www.apollographql.com/blog/backend/using-express-with-graphql-server-node-js/)
+- [GraphQL](https://graphql.org/graphql-js/)
+- [Node Version Manager](https://github.com/nvm-sh/nvm)
+- [Notes on Node Module Versions](#notes-on-node-module-versions)
+- [View Docker Logs](#viewing-docker-logs)
+- [How To Communicate Between Docker Containers](#how-to-communicate-between-docker-containers)
 
 
 The Mongo Movies application consists of three docker images.  See the individual `Dockerfile` in each of the subdirectories.
 
-- [Build & Run Express Server](#build-&-run-express-server)
-- [Build & Run MongoDB](#build-&-run-mongodb)
-- [Build & Run GraphQL](#build-&-run-graphql)
+- [Build & Run Express Server](#build-\&-run-express-server)
+- [Build & Run MongoDB](#build-\&-run-mongodb)
+- [Build & Run GraphQL](#build-/&-run-graphql)
 - [Running Tests](#running-tests)
 
 
