@@ -20,9 +20,9 @@ I've been working with REST API's for many years and so wanted to see what all f
 
 The Mongo Movies application consists of three docker images.  See the individual `Dockerfile` in each of the subdirectories.
 
-- [Build & Run Express Server](#build-run-express-server)
-- [Build & Run MongoDB](#build-run-mongodb)
-- [Build & Run GraphQL](#build-run-graphql)
+- [Build & Run Express Server](#build--run-express-server)
+- [Build & Run MongoDB](#build--run-mongodb)
+- [Build & Run GraphQL](#build--run-graphql)
 - [Running Tests](#running-tests)
 
 
