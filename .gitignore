@@ -1,3 +1,4 @@
+.DS_Store
 .vagrant
 node/node_modules/
 graphql/node_modules/
