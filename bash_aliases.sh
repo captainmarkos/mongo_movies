@@ -49,14 +49,14 @@ txtrst='\e[0m'    # Text Reset
 export PS1="\[$bldred\][\u]: \[$bldgrn\]\$PWD\[$bldred\]> \[$txtrst\]"
 
 # set node version
-SRC_DIR="/Users/mdb/local/src/mongo_movies";
+SRC_DIR="/Users/mark.brettin/local/src/mongo_movies";
 cd $SRC_DIR;
 nvm use;
 
 function rnr_node() {
     # rebuild and run docker container
 
-    SRC_DIR="/Users/mdb/local/src/mongo_movies"
+    #SRC_DIR="/Users/mdb/local/src/mongo_movies"
 
     echo "==> cd $SRC_DIR/node";
     cd $SRC_DIR/node;
@@ -79,13 +79,13 @@ function rnr_node() {
 
     docker run --detach -p 80:80 \
                --name mdb-node-www mdb-node-www \
-               # -v $SRC_DIR/node/lib:/app/lib
+               #-v $SRC_DIR/node/lib:/app/lib
 }
 
 function rnr_mongo() {
     # rebuild and run docker container
 
-    SRC_DIR="/Users/mdb/local/src/mongo_movies"
+    #SRC_DIR="/Users/mdb/local/src/mongo_movies"
 
     echo "==> cd $SRC_DIR/mongo";
     cd $SRC_DIR/mongo;
@@ -107,11 +107,11 @@ function rnr_mongo() {
                #   "               -v $SRC_DIR/mongo/tmp/mongo_movies:/data/db";
     docker run --detach -p 27017:27017 \
                --name mdb-mongo mdb-mongo \
-               # -v $SRC_DIR/mongo/tmp/mongo_movies:/data/db
+               #-v $SRC_DIR/mongo/tmp/mongo_movies:/data/db
 }
 
 function rnr_graphql() {
-    SRC_DIR="/Users/mdb/local/src/mongo_movies"
+    #SRC_DIR="/Users/mdb/local/src/mongo_movies"
 
     echo "==> cd $SRC_DIR/graphql";
     cd $SRC_DIR/graphql;
@@ -133,7 +133,7 @@ function rnr_graphql() {
                #   "               -v $SRC_DIR/graphql/lib:/app/lib ";
     docker run --detach -p 4000:4000 \
                --name mdb-graphql mdb-graphql \
-               # -v $SRC_DIR/graphql/lib:/app/lib;
+               #-v $SRC_DIR/graphql/lib:/app/lib;
 }
 
 
