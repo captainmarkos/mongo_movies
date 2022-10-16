@@ -7,7 +7,7 @@ const moment = require('moment');
 const start_date = Date.now();
 
 // docker inspect <container id> | grep IPAddress
-const mongo_url = 'mongodb://172.17.0.2:27017';
+const mongo_url = 'mongodb://172.17.0.3:27017';
 const mongo_options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 // Construct a schema, using GraphQL schema definition language (SDL).
@@ -169,9 +169,8 @@ const resolvers = {
     }
 };
 
-const boot = async () => {
-    // Wrapping this code in an async function helps prevent race condtions?
-
+// Self invoking async anonymous function
+async () => {
     const app = express();
     app.get('/status/', (req, res) => {
         res.json({ start: start_date });
@@ -197,6 +196,4 @@ const boot = async () => {
     app.listen(4000, () => {
         console.log(`🚀 Server is ready`);
     });
-};
-
-boot();
+}();

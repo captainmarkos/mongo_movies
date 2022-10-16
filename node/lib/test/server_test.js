@@ -3,7 +3,7 @@ const assert = require('assert');
 const { deepCheck } = require('@simpleview/assertlib');
 const axios = require('axios');
 
-const EXPRESS_WWW_URL = 'http://172.17.0.3/';
+const EXPRESS_WWW_URL = 'http://172.17.0.2/';
 
 describe(__filename, function() {
     describe('Express Server', function() {

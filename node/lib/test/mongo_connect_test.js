@@ -2,7 +2,7 @@ const assert = require('assert');
 
 const { MongoClient } = require('mongodb');
 
-const mongo_url = 'mongodb://172.17.0.2:27017';
+const mongo_url = 'mongodb://172.17.0.3:27017';
 const options = { useUnifiedTopology: true };
 
 describe(__filename, function() {
