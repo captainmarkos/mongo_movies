@@ -1,8 +1,6 @@
 # Mongo Movies
 
-This is my playgound for MongoDB, Express, NodeJS and GraphQL which is all backend tech but if I were to add React then I suppose we would have a MERN stack.  Personal fun fact, I started out as a LAMP stack developer back in the 90's.  LAMP being Linux, Apache, MySQL and Perl/PHP.  I'm going to use Docker in which to run all these different components and most of this document will be how to get the Mongo Movies app up and running locally using Docker.
-
-I've been working with REST API's for many years and so wanted to see what all fuss is/was surround GraphQL.  So in this repo I built an app what I call `Mongo Movies`.  It's pretty much all backend.  There's no fancy GUI but you can hit URLs in the browser (or use curl) to show and modify data that's stored in the mongodb.
+This is a playgound for MongoDB, Express, NodeJS and GraphQL which is all backend tech (as used here anyways).  I'm going to use Docker in which to run all these different components and most of this document will be how to get the Mongo Movies app up and running locally using Docker.  There's no fancy UI but you can hit URLs in the browser (or use curl) to show and modify data that's stored in the mongodb.
 
 
 ### The Stack, Tools & Notes
